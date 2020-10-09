@@ -1224,6 +1224,45 @@ mod tests {
         }
         {
             let a_name = Names::new(
+                vec![Name::new("cl san francisco alto", 0, None, &context)],
+                &context,
+            );
+            let b_name = Names::new(
+                vec![Name::new("calle san franciso alto", 0, None, &context)],
+                &context,
+            );
+            let a = Link::new(1, &a_name);
+            let b = vec![Link::new(2, &b_name)];
+            assert_eq!(linker(a, b, false), Some(LinkResult::new(2, 70.01)));
+        }
+        {
+            let a_name = Names::new(
+                vec![Name::new("cl f garcia lorca", 0, None, &context)],
+                &context,
+            );
+            let b_name = Names::new(
+                vec![Name::new("calle federico garcia lorca", 0, None, &context)],
+                &context,
+            );
+            let a = Link::new(1, &a_name);
+            let b = vec![Link::new(2, &b_name)];
+            assert_eq!(linker(a, b, false), Some(LinkResult::new(2, 70.01)));
+        }
+        {
+            let a_name = Names::new(
+                vec![Name::new("cl ntra. sra. amparo", 0, None, &context)],
+                &context,
+            );
+            let b_name = Names::new(
+                vec![Name::new("calle nuestra senora del amparo", 0, None, &context)],
+                &context,
+            );
+            let a = Link::new(1, &a_name);
+            let b = vec![Link::new(2, &b_name)];
+            assert_eq!(linker(a, b, false), Some(LinkResult::new(2, 70.01)));
+        }
+        {
+            let a_name = Names::new(
                 vec![Name::new("carrer de l'onze de setembre", 0, None, &context)],
                 &context,
             );
