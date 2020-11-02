@@ -10,7 +10,7 @@ name = "pt2itp"
 crate-type = ["dylib"]
 
 [build-dependencies]
-neon-build = "0.2"
+neon-build = "0.5.1"
 
 [dependencies]
 crossbeam = "0.7"
